@@ -206,3 +206,114 @@
     }
   }
 }
+
+/* ======================sos-activated================= */
+.sos-activated-main{
+    width: 100vw;
+    height: 100vh;
+    background-color: #eff2fa;
+    padding: 1em;
+    overflow-y: scroll;
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  
+      .profile {
+        display: flex;
+        align-items: center;
+        gap: 0.25em;
+      }
+      .loc {
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        p {
+          color: #969696;
+        }
+      }
+    }
+    .sos-pg{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 1em;
+        .sos-act{
+            width: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #FF364B;
+            padding: 1em;
+            border-radius: 30px;
+            margin-top: 1em;
+            color: white;
+            gap: 1em;
+        }
+        .location{
+            width:100%;
+            background-color: white;
+            border-radius: 20px;
+            padding: 1em;
+            margin-top: 1em;
+            .loc-header{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .loc-header-left{
+                    display: flex;
+                }
+                .live{
+                    display: flex;
+                    align-items: center;
+                    background-color: #FFD2D6;
+                    padding: 0.25em 0.5em;
+                    gap: 0.5em;
+                    border-radius: 10px;
+                    .red-dot{
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        background-color: red;
+                    }
+                }
+            }
+            .loc-img{
+                padding: 0.5em;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+        .health-data{
+            width:100%;
+            background-color: white;
+            border-radius: 20px;
+            padding: 1em;
+            margin-top: 1em;
+            header{
+                .content{
+                    p{
+                        font-size: 1em;
+                        color: #969696;
+                    }
+                }
+            }
+            .container{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                flex-wrap: wrap;
+                gap: 1em;
+                padding-top: 1em;
+                .heart-rate,.bp,.o2,.bodytemp{
+                    padding: 2.1em;
+                    background-color: #F4F6F8;
+                    border-radius: 20px;
+                }
+            }
+        }
+    }
+}
