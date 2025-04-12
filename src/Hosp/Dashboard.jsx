@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Hospital = () => {
+const Dashboard = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const Hospital = () => {
   )
 }
 
-export default Hospital
+export default Dashboard

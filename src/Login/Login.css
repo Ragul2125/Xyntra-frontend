@@ -221,3 +221,123 @@
     }
   }
 }
+
+/* ===============signup=====================*/
+/* Reset some default styles */
+
+.signup-container {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  width: 100vw;
+  height: 100vh;
+  background-color: #eff2fa;
+  overflow-y: scroll;
+
+  .signup-box {
+    padding: 2rem;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 380px;
+    text-align: center;
+    padding-bottom: 2em;
+    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); */
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+    p {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+    form {
+      text-align: left;
+
+      label {
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-bottom: 5px;
+        display: block;
+        color: #444;
+      }
+
+      .input-field {
+        background-color: #ffffff;
+        border-radius: 12px;
+        padding: 10px 15px;
+        margin-bottom: 15px;
+        input {
+          border: none;
+          width: 100%;
+          background: transparent;
+          outline: none;
+          font-size: 1rem;
+        }
+      }
+      .role-container {
+        display: flex;
+        justify-content: space-between;
+        overflow-x: scroll;
+        gap: 1em;
+        margin: 10px 0 20px;
+      }
+
+      .role-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 100px;
+        height: 100px;
+        padding: 1em;
+        border-radius: 20px;
+        background-color: transparent;
+        cursor: pointer;
+        background-color: white;
+        transition: background-color 0.3s ease;
+      }
+      .role-box:hover {
+        background-color: rgba(128, 128, 128, 0.15);
+      }
+      .role-box.selected {
+        background-color: rgba(128, 128, 128, 0.15);
+      }
+
+      .signup-btn {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 20px;
+        background: linear-gradient(to right, #001f3f, #003366);
+        color: white;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 0.3s ease;
+        margin-top: 10px;
+      }
+      .signup-btn:hover {
+        opacity: 0.9;
+      }
+    }
+    .alt-option {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+
+      .signin-link {
+        color: #003366;
+        font-weight: 600;
+        cursor: pointer;
+      }
+    }
+
+    .forgot-link {
+      margin-top: 0.4rem;
+      font-size: 0.85rem;
+      color: #888;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}

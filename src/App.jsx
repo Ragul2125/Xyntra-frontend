@@ -3,10 +3,11 @@ import './App.css'
 import Login from "./Login/Login.jsx"
 import Signup from './Login/Signup.jsx'
 import Client from './client/Client-layout.jsx'
-import Hospital from './Hosp/Hospital.jsx'
+import Hospital from './Hosp/Hospital-layout.jsx'
 import Ambulance from './Ambulance/Ambulance-layout.jsx'
 import Loading from "./Login/Loading.jsx"
 import GetStarted from './Login/GetStarted.jsx'
+
 function App() {
 
 
