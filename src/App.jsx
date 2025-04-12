@@ -5,7 +5,8 @@ import Signup from './Login/Signup.jsx'
 import Client from './client/Client-layout.jsx'
 import Hospital from './Hosp/Hospital.jsx'
 import Ambulance from './Ambulance/Ambulance-layout.jsx'
-
+import Loading from "./Login/Loading.jsx"
+import GetStarted from './Login/GetStarted.jsx'
 function App() {
 
 
@@ -13,7 +14,9 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Login/>}/>
+          <Route path='/' element={<Loading/>}/>
+          <Route path='/loading' element={<Loading/>}/>
+          <Route path='/getStarted' element={<GetStarted/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/signup' element={<Signup/>}/>
           <Route path='/client/*' element={<Client/>}/>

@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import profile from "../assets/profile.svg";
 import location from "../assets/location.svg";
 import call from "../assets/call.svg";
 import locationgreen from "../assets/location-green.svg";
 import map from "../assets/map.svg";
-import heart from "../assets/heart.svg"
-
+import heart from "../assets/heart.svg";
+import truck from "../assets/truck.svg";
 const SosActived = () => {
+  const [minsLeft, setMinsLeft] = useState(10);
+
+  useEffect(() => {
+    if (minsLeft > 0) {
+      const timer = setTimeout(() => setMinsLeft((prev) => prev - 1), 60000);
+      return () => clearTimeout(timer);
+    }
+  }, [minsLeft]);
+
+  const ratioWidth = (minsLeft / 10) * 100;
   return (
     <div className="sos-activated-main">
       <header>
@@ -67,7 +77,33 @@ const SosActived = () => {
             </div>
           </div>
         </div>
-        <div className="ambulance"></div>
+        <div className="ambulance-status">
+          <div className="ambulance-status-header">
+            <div className="ambulance-status-header-left">
+              <img src={truck} alt="" />
+              <div className="ambulance-status-header-left-content">
+                <h3>Ambulance Status</h3>
+                <p>Estimated arrival: {minsLeft} minutes</p>
+              </div>
+            </div>
+            <div className="route">
+              <p>Route</p>
+            </div>
+          </div>
+          <div className="ratio-box">
+            <div
+              className="ratio-fill"
+              style={{
+                width: `${(minsLeft / 10) * 100}%`,
+                backgroundColor:
+                  minsLeft > 7 ? "green" : minsLeft > 4 ? "orange" : "red",
+              }}
+            ></div>
+          </div>
+        </div>
+        <div className="hosp-status">
+          
+        </div>
       </div>
     </div>
   );

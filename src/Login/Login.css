@@ -1,0 +1,223 @@
+.splash-screen {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to bottom, #0f2940, #122f4a);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.5s ease-in-out;
+  position: relative;
+  .icon,
+  .title,
+  .description {
+    opacity: 0;
+    transform: translateY(10px);
+    animation-fill-mode: forwards;
+  }
+
+  .icon {
+    font-size: 10px;
+    color: #e62757;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+
+  .title {
+    font-size: 32px;
+    font-weight: bold;
+    animation: fadeIn 0.5s ease 0.8s forwards;
+    color: white;
+  }
+
+  .description {
+    font-size: 16px;
+    margin-top: 10px;
+    animation: fadeIn 0.5s ease 1.5s forwards;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hide {
+  background-color: white;
+  color: white;
+}
+
+/* -----Get-started=========== */
+
+.welcome-container {
+  height: 100vh;
+  width: 100%;
+  background-color: #eff2fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+  text-align: center;
+  .title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1d1d1d;
+    margin-bottom: 10px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  .image-wrapper {
+    margin: 20px 0;
+    .ambulance-image {
+      width: 200px;
+      max-width: 80%;
+    }
+  }
+  .get-started {
+    background-color: #0f172a;
+    color: white;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.1s ease;
+    .arrow {
+      font-size: 18px;
+    }
+  }
+
+  .get-started:hover {
+    background-color: #1e293b;
+  }
+  .signin-text {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #6b7280;
+    .signin-link {
+      color: #0f172a;
+      font-weight: 500;
+      cursor: pointer;
+    }
+  }
+}
+
+/* -------login============ */
+.signin-container {
+  height: 100vh;
+  width: 100%;
+  background-color: #f4f7fb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+  .signin-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 8px;
+  }
+
+  .signin-subtitle {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 24px;
+    text-align: center;
+    max-width: 300px;
+  }
+  .form {
+    width: 100%;
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+    label {
+      font-size: 14px;
+      color: #374151;
+      margin-bottom: 6px;
+    }
+
+    .input-box {
+      display: flex;
+      align-items: center;
+      background-color: white;
+      border-radius: 12px;
+      padding: 10px 12px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e5e7eb;
+      position: relative;
+      input {
+        flex: 1;
+        border: none;
+        outline: none;
+        font-size: 14px;
+        padding-left: 8px;
+        background: transparent;
+      }
+      .input-icon {
+        font-size: 16px;
+      }
+      .eye-icon {
+        position: absolute;
+        right: 12px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    }
+
+    .signin-btn {
+      background-color: #0f172a;
+      color: white;
+      padding: 14px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background 0.3s ease;
+      .arrow {
+        font-size: 18px;
+      }
+    }
+
+    .signin-btn:hover {
+      background-color: #1e293b;
+    }
+    .links {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #6b7280;
+      .signup {
+        color: #0f172a;
+        font-weight: 500;
+        cursor: pointer;
+      }
+      .forgot {
+        margin-top: 8px;
+        font-size: 13px;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+}

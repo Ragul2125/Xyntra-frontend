@@ -4,7 +4,12 @@ import profile from "../assets/profile.svg"
 import location from "../assets/location.svg"
 import add from "../assets/add-square.svg"
 import SosBtn from "./SosBtn.jsx"
+import { useNavigate } from 'react-router-dom'
 const Sos = () => {
+    const Navigate = useNavigate();
+    const handleSos = ()=>{
+        Navigate('/client/sos-activation')
+    }
   return (
     <div className='sos-main-pg'>
       <header>
@@ -25,8 +30,8 @@ const Sos = () => {
                 <p>Tap the button below for immediate assistance </p>
             </div>
         </div>
-        <div className="sos-btn">
-            <SosBtn/>
+        <div className="sos-btn" onClick={handleSos}>
+            <SosBtn />
         </div>
         <div className="sos-manual-part">
             <h2>Not sure what to do?</h2>
