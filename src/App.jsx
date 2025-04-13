@@ -7,7 +7,7 @@ import Hospital from './Hosp/Hospital-layout.jsx'
 import Ambulance from './Ambulance/Ambulance-layout.jsx'
 import Loading from "./Login/Loading.jsx"
 import GetStarted from './Login/GetStarted.jsx'
-
+import Vital from "./Hosp/vital.jsx"
 function App() {
 
 
@@ -23,6 +23,8 @@ function App() {
           <Route path='/client/*' element={<Client/>}/>
           <Route path='/ambulance/*' element={<Ambulance/>}/>
           <Route path='/hospital/*' element={<Hospital/>}/>
+          <Route path='/vital' element={<Vital/>}/>
+
         </Routes>
       </BrowserRouter>
     </>

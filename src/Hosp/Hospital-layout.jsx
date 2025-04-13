@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Routes, Route, Outlet, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { TbWaveSawTool } from "react-icons/tb";
@@ -47,7 +47,21 @@ const HospitalDashboard = () => {
   const sortedAlerts = [...alertData].sort(
     (a, b) => severityOrder[a.severity] - severityOrder[b.severity]
   );
+  const [popUp, setPopUp] = useState(0);
+  const handlePopup = () => {
+    setPopUp(1);
+  };
 
+  const handlePopupClose = () => {
+    setPopUp(0);
+  };
+
+  const [respondedAlerts,setRespondedAlerts] = useState([]);
+  const handleRespond = (id) => {
+    if (!respondedAlerts.includes(id)) {
+      setRespondedAlerts((prev) => [...prev, id]);
+    }
+  };
   return (
     <div className="hospital-main-pg">
       <nav className="navbar">
@@ -129,7 +143,12 @@ const HospitalDashboard = () => {
 
                 <div className="symptoms">
                   <label>Symptoms</label>
-                  <input type="text" value={alert.symptoms} readOnly />
+                  <span className="sym">
+                    <div>{alert.symptoms}</div>
+                    <div className="view" onClick={handlePopup}>
+                      view
+                    </div>
+                  </span>
                 </div>
 
                 <div className="time-contact">
@@ -142,7 +161,15 @@ const HospitalDashboard = () => {
                 </div>
 
                 <div className="card-actions">
-                  <button className="respond-btn">✔ Mark as Responded</button>
+                  <button
+                    className={`respond-btn ${
+                      respondedAlerts.includes(alert.id) ? "responded" : ""
+                    }`}
+                    onClick={() => handleRespond(alert.id)}
+                  >
+                    ✔ Mark as Responded
+                  </button>
+
                   <button className="map-btn" onClick={() => navigate("map")}>
                     📍 View on Map
                   </button>
@@ -151,6 +178,20 @@ const HospitalDashboard = () => {
             </div>
           ))}
         </div>
+        {popUp == 1 ? (
+          <div className="popup" onClick={handlePopupClose}>
+            <div className="summaryOf-container">
+              <div className="title">
+                <h3>Summary</h3>
+                <div className="cross" onClick={handlePopupClose}>
+                  x
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
       </main>
     </div>
   );
